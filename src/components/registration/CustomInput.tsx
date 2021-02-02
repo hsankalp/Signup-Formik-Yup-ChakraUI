@@ -17,7 +17,12 @@ const CustomInput = (props: FormProps) => {
   return (
     <Box w="100%">
       <InputGroup>
-        <Input {...field} {...props} isInvalid={hasError} />
+        <Input
+          {...field}
+          {...props}
+          isInvalid={hasError}
+          focusBorderColor={!!value && hasError ? "green" : ""}
+        />
         {!!value ? (
           <InputRightElement
             children={
@@ -30,7 +35,13 @@ const CustomInput = (props: FormProps) => {
           />
         ) : null}
       </InputGroup>
-      <Text textTransform="uppercase" fontSize="xs" color="tomato" mt="5px">
+      <Text
+        textTransform="uppercase"
+        fontWeight="700"
+        fontSize="xx-small"
+        color="tomato"
+        mt="5px"
+      >
         {hasError ? error : ""}
       </Text>
     </Box>
