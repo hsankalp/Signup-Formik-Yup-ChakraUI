@@ -15,7 +15,7 @@ const RegistrationView = ({ viewModel }: Props) => {
   const [isMobile] = useMediaQuery("(max-width: 600px)");
   const { initValues, handleSubmit, handlePhone } = viewModel;
   return (
-    <Box p={3} w={isMobile ? "100%" : ""} maxW="450px">
+    <Box p={3} w={isMobile ? "100%" : ""} minW={isMobile ? "" : "500px"}>
       <Formik
         initialValues={initValues}
         validationSchema={ValidationSchema}
