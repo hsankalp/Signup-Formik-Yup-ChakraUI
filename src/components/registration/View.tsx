@@ -5,17 +5,16 @@ import FormView from "./FormView";
 import { FormValues } from "./types";
 import { ValidationSchema } from "./validationSchema";
 import RegistrationViewModel from "./ViewModel";
-import { Box, useMediaQuery } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 interface Props {
   viewModel: RegistrationViewModel;
 }
 
 const RegistrationView = ({ viewModel }: Props) => {
-  const [isMobile] = useMediaQuery("(max-width: 600px)");
   const { initValues, handleSubmit, handlePhone } = viewModel;
   return (
-    <Box p={3} w={isMobile ? "100%" : ""} minW={isMobile ? "" : "500px"}>
+    <Box p={3} w="100%">
       <Formik
         initialValues={initValues}
         validationSchema={ValidationSchema}
